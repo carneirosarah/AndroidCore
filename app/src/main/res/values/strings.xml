@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">desafio-android-core</string>
-    <string name="login_title">Register</string>
+    <string name="login_title">Digital House Foods</string>
     <string name="login_email">Email</string>
     <string name="login_senha">Password</string>
-    <string name="login_button">LOG IN</string>
+    <string name="login_button_1">LOG IN</string>
+    <string name="login_button_2">REGISTER</string>
+    <string name="login_or">OR</string>
+    <string name="register_title">Register</string>
+    <string name="register_email">Email</string>
+    <string name="register_senha">Password</string>
+    <string name="register_button">LOG IN</string>
 </resources>
