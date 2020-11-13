@@ -11,6 +11,6 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/image5"/>
+        android:src="@mipmap/image4_foreground"/>
 
 </LinearLayout>
