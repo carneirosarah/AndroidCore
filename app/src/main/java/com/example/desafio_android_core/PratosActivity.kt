@@ -8,8 +8,7 @@ import kotlinx.android.synthetic.main.activity_pratos.*
 
 class PratosActivity : AppCompatActivity(), PratoAdapter.OnClickPratoListener {
 
-    var pratos = getPratosList()
-    val adapter = PratoAdapter(pratos, this)
+    var pratos = arrayListOf<Prato>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,12 +16,12 @@ class PratosActivity : AppCompatActivity(), PratoAdapter.OnClickPratoListener {
 
         val extras = intent.extras
 
-        if(extras?.get("restaurante") != null) {
+        val restaurante : Restaurante = extras?.get("restaurante") as Restaurante
+        tv_restaurante_nome.text = restaurante.nome
+        iv_restaurante_foto.setImageResource(restaurante.foto)
 
-            val restaurante : Restaurante = extras?.get("restaurante") as Restaurante
-            tv_restaurante_nome.text = restaurante.nome
-            iv_restaurante_foto.setImageResource(restaurante.foto)
-        }
+        this.pratos = restaurante.pratos
+        val adapter = PratoAdapter(pratos, this)
 
         button_back.setOnClickListener {
             finish()
@@ -38,14 +37,6 @@ class PratosActivity : AppCompatActivity(), PratoAdapter.OnClickPratoListener {
         rvPrato2.setNestedScrollingEnabled(false)
 
     }
-
-    fun getPratosList() = arrayListOf<Prato>(
-            Prato(1,"Salada com molho Gengibre", "abcd", R.mipmap.image3_foreground),
-            Prato(2,"Salada com molho Gengibre", "abcd", R.mipmap.image3_foreground),
-            Prato(3,"Salada com molho Gengibre", "abcd", R.mipmap.image3_foreground),
-            Prato(4,"Salada com molho Gengibre", "abcd", R.mipmap.image3_foreground),
-            Prato(5,"Salada com molho Gengibre", "abcd", R.mipmap.image3_foreground)
-    )
 
     override fun onClickPrato(position: Int) {
         var prato = pratos.get(position)
