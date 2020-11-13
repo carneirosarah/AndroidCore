@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="left"
-    android:orientation="vertical"
-    android:layout_margin="10dp"
-    android:backgroundTint="@color/white">
-
-    <ImageView
-        android:id="@+id/tvImagemRestaurante"
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="346dp"
-        android:scaleType="fitXY" />
-
-    <TextView
-        android:id="@+id/tvNomeRestaurante"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:textColor="@color/black"
-        style="bold"/>
+        app:cardCornerRadius="10dp"
+        android:layout_margin="10dp"
+        android:elevation="10dp">
 
-    <TextView
-        android:id="@+id/tvEnderecoRestaurante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:textColor="@color/cinza" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:background="@color/white">
 
-    <TextView
-        android:id="@+id/tvDadosRestaurante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:textColor="@color/cinza" />
+            <ImageView
+                android:id="@+id/tvImagemRestaurante"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/tvNomeRestaurante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                style="bold"
+                android:padding="5dp"/>
+
+            <TextView
+                android:id="@+id/tvEnderecoRestaurante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/cinza"
+                android:padding="5dp"/>
+
+            <TextView
+                android:id="@+id/tvDadosRestaurante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"                android:textColor="@color/cinza"
+                android:padding="5dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:backgroundTint="@color/cinza_light">
+    android:background="@color/cinza_light">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -24,10 +24,6 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -40,5 +36,4 @@
                 tools:listitem="@layout/item_restaurante" />
 
         </LinearLayout>
-    </ScrollView>
 </LinearLayout>
