@@ -11,7 +11,7 @@ class CadastroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cadastro)
 
         topAppBar.setNavigationOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
 
         registerButton.setOnClickListener{

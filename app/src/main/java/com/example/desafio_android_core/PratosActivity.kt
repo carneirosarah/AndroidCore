@@ -3,8 +3,6 @@ package com.example.desafio_android_core
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_pratos.*
 
@@ -18,13 +16,16 @@ class PratosActivity : AppCompatActivity(), PratoAdapter.OnClickPratoListener {
         setContentView(R.layout.activity_pratos)
 
         val extras = intent.extras
-        val restaurante : Restaurante = extras?.get("restaurante") as Restaurante
 
-        tv_restaurante_nome.text = restaurante.nome
-        iv_restaurante_foto.setImageResource(restaurante.foto)
+        if(extras?.get("restaurante") != null) {
+
+            val restaurante : Restaurante = extras?.get("restaurante") as Restaurante
+            tv_restaurante_nome.text = restaurante.nome
+            iv_restaurante_foto.setImageResource(restaurante.foto)
+        }
 
         button_back.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
 
         rvPrato1.adapter = adapter
@@ -33,6 +34,9 @@ class PratosActivity : AppCompatActivity(), PratoAdapter.OnClickPratoListener {
         rvPrato2.layoutManager = LinearLayoutManager(this)
         rvPrato1.setHasFixedSize(true)
         rvPrato2.setHasFixedSize(true)
+        rvPrato1.setNestedScrollingEnabled(false)
+        rvPrato2.setNestedScrollingEnabled(false)
+
     }
 
     fun getPratosList() = arrayListOf<Prato>(
@@ -45,6 +49,8 @@ class PratosActivity : AppCompatActivity(), PratoAdapter.OnClickPratoListener {
 
     override fun onClickPrato(position: Int) {
         var prato = pratos.get(position)
-        Toast.makeText(this, prato.nome, Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, DetalhesActivity::class.java)
+        intent.putExtra("prato", prato)
+        startActivity(intent)
     }
 }
