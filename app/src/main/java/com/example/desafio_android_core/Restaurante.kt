@@ -1,6 +1,5 @@
 package com.example.desafio_android_core
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
+import java.io.Serializable
 
-data class Restaurante (val id: Int, var nome: String, var endereco: String, var dadosAdicionais: String, var foto: Int )
+class Restaurante (val id: Int, var nome: String, var endereco: String, var dadosAdicionais: String, var foto: Int ) : Serializable

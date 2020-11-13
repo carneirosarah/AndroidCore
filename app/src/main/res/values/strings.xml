@@ -11,4 +11,5 @@
     <string name="register_email">Email</string>
     <string name="register_senha">Password</string>
     <string name="register_conf_senha">Repeate Password</string>
+    <string name="prato_principal">Pratos principais</string>
 </resources>

@@ -11,6 +11,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@mipmap/image4_foreground"/>
+        android:src="@mipmap/image4_foreground"
+        android:scaleType="centerCrop"/>
 
 </LinearLayout>

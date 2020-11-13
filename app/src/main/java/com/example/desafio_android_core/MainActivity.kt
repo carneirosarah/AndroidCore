@@ -1,5 +1,6 @@
 package com.example.desafio_android_core
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -29,6 +30,8 @@ class MainActivity : AppCompatActivity(), RestauranteAdapter.OnClickRestauranteL
 
     override fun onClickRestaurante(position: Int) {
         var restaurante = restaurantes.get(position)
-        Toast.makeText(this, restaurante.nome, Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, PratosActivity::class.java)
+        intent.putExtra("restaurante", restaurante)
+        startActivity(intent)
     }
 }
